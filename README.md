@@ -30,6 +30,7 @@ bundle
 ## Todo
 
 * add option to strip comments from the `application.html.erb`
+* add option to exclude google analytics script
 * check whether prototype instead of jquery is used, if so adapt the generated files
 
 ## Changelog
