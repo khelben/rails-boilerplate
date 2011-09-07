@@ -19,7 +19,7 @@ This gives you a rake task `boilerplate:install` which does the following things
 
 ## Development
 
-If you want to checkout to code, be sure to do:
+If you want to checkout the code, be sure to do:
 
 ```bash
 git submodule init
