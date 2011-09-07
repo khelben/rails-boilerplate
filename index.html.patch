@@ -1,0 +1,62 @@
+--- html5-boilerplate/index.html	2011-09-07 08:09:48.553576001 +0200
++++ lib/generators/boilerplate/install/templates/index.html	2011-09-07 14:27:27.485576001 +0200
+@@ -12,7 +12,7 @@
+        More info: h5bp.com/b/378 -->
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 
+-  <title></title>
++  <title><%= application_name %></title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+ 
+@@ -21,43 +21,24 @@
+ 
+   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+ 
+-  <link rel="stylesheet" href="css/style.css">
+-  
++  <%%= stylesheet_link_tag "application" %>
++
+   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+ 
+   <!-- All JavaScript at the bottom, except this Modernizr build incl. Respond.js
+-       Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects; 
++       Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects;
+        for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
+-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
++  <%%= javascript_include_tag "modernizr" %>
+ </head>
+ 
+ <body>
+ 
+-  <div id="container">
+-    <header>
+-
+-    </header>
+-    <div id="main" role="main">
+-
+-    </div>
+-    <footer>
+-
+-    </footer>
+-  </div> <!--! end of #container -->
+-
++  <%%= yield %>
+ 
+   <!-- JavaScript at the bottom for fast page loading -->
+ 
+-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.3.min.js"><\/script>')</script>
+-
+-
+-  <!-- scripts concatenated and minified via build script -->
+-  <script defer src="js/plugins.js"></script>
+-  <script defer src="js/script.js"></script>
+-  <!-- end scripts -->
+-
++  <!-- Removed jQuery logic as jquery-rails is already included by application.js -->
++  <%%= javascript_include_tag "application" %>
+ 
+   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+        mathiasbynens.be/notes/async-analytics-snippet -->

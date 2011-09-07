@@ -1,0 +1,9 @@
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+*.swp
+test/dummy/tmp/*
+test/tmp
+*.sqlite3
+*.log
