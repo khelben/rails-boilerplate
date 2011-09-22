@@ -32,13 +32,12 @@
 </head>
 
 <body>
-
   <%%= yield %>
 
   <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Removed jQuery logic as jquery-rails is already included by application.js -->
   <%%= javascript_include_tag "application" %>
+  <!-- end scripts -->
+
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
