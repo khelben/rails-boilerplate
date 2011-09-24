@@ -1,5 +1,5 @@
---- html5-boilerplate/index.html	2011-09-22 15:54:55.849401000 +0200
-+++ lib/generators/boilerplate/install/templates/index.html	2011-09-22 16:19:57.965401001 +0200
+--- html5-boilerplate/index.html	2011-09-24 10:26:27.000000000 +0200
++++ lib/generators/boilerplate/install/templates/index.html	2011-09-24 10:27:21.000000000 +0200
 @@ -12,7 +12,7 @@
         More info: h5bp.com/b/378 -->
    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,13 +9,14 @@
    <meta name="description" content="">
    <meta name="author" content="">
  
-@@ -21,38 +21,21 @@
+@@ -21,38 +21,22 @@
  
    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
  
 -  <link rel="stylesheet" href="css/style.css">
 -  
 +  <%%= stylesheet_link_tag "application" %>
++  <%%= csrf_meta_tags %>
 +
    <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
  
