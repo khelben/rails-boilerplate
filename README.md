@@ -11,7 +11,7 @@ gem "rails-boilerplate"
 ```
 This gives you a rake task `boilerplate:install` which does the following things:
 
-* updates `app/views/layouts/application.html.erb` to include all the elements used in the [H5BP:index.html](https://github.com/paulirish/html5-boilerplate/blob/master/index.html) converted to a Rails compatible ERB file, complete with the necessary rails helper calls.
+* updates `app/views/layouts/application.html.erb` to include all the elements used in the [H5BP:index.html](https://github.com/h5bp/html5-boilerplate/blob/master/index.html) converted to a Rails compatible ERB file, complete with the necessary rails helper calls.
 
 * adds `style.css`(renamed to reset.css), `modernizr.js` and `plugins.js` as assets
 
