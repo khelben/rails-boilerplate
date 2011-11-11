@@ -9,7 +9,7 @@ You'll need at least Rails 3.1. Then put this in your `Gemfile`:
 ```ruby
 gem "rails-boilerplate"
 ```
-This gives you a rake task `boilerplate:install` which does the following things:
+This gives you a generator `boilerplate:install` which does the following things:
 
 * updates `app/views/layouts/application.html.erb` to include all the elements used in the [H5BP:index.html](https://github.com/h5bp/html5-boilerplate/blob/master/index.html) converted to a Rails compatible ERB file, complete with the necessary rails helper calls.
 
