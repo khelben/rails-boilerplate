@@ -1,6 +1,6 @@
 # Rails Boilerplate
 
-[Rails Boilerplate](https//github.com/khelben/rails-boilerplate) is a Rails (>= 3.1.0) gem which helps you to use the [html 5 boilerplate](http://html5boilerplate.com).
+[Rails Boilerplate](https://github.com/khelben/rails-boilerplate) is a Rails (>= 3.1.0) gem which helps you to use the [html 5 boilerplate](http://html5boilerplate.com).
 
 ## Install & usage
 
