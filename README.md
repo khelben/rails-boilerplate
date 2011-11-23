@@ -35,4 +35,5 @@ bundle
 
 ## Changelog
 
+* 0.1.5: 21/nov/2011: updated to html5-boilerplate version
 * 0.1.0: initial version.
