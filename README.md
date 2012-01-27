@@ -31,9 +31,9 @@ bundle
 
 * add option to strip comments from the `application.html.erb`
 * add option to exclude google analytics script
-* check whether prototype instead of jquery is used, if so adapt the generated files
 
 ## Changelog
 
+* 0.1.6: google analytics scripts (ga.js) only gets attached in production env
 * 0.1.5: 21/nov/2011: updated to html5-boilerplate version
 * 0.1.0: initial version.
