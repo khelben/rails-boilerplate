@@ -23,6 +23,11 @@ module Boilerplate
           "//= require plugins\n"
         end
       end
+      def inject_assets_precompile
+        inject_into_file "config/environments/production.rb", :after => "%w( search.js )\n" do
+          " config.assets.precompile += %w( modernizr.js )\n"
+        end
+      end
       def copies_files
         %w{robots.txt crossdomain.xml humans.txt favicon.ico apple-touch-icon-114x114-precomposed.png apple-touch-icon-57x57-precomposed.png apple-touch-icon-72x72-precomposed.png apple-touch-icon-precomposed.png apple-touch-icon.png}.each do |f|
           copy_file f, "public/#{f}"
