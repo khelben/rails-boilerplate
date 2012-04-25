@@ -14,7 +14,11 @@ module Boilerplate
       end
 
       def inject_reset_css
-        inject_into_file "app/assets/stylesheets/application.css", :before => " *= require_self" do
+        application_css_scss = "app/assets/stylesheets/application.css.scss"
+        application_css = "app/assets/stylesheets/application.css"
+        css_file = File.exist?(application_css_scss) ? application_css_scss : application_css
+        
+        inject_into_file css_file, :before => " *= require_self" do
           " *= require reset\n"
         end
       end
