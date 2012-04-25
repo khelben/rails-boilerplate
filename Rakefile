@@ -35,7 +35,7 @@ task :update_files => :patch_files do |t|
     # stylesheets
     'html5-boilerplate/css/style.css' => 'vendor/assets/stylesheets/reset.css',
     # javascripts
-    'html5-boilerplate/js/libs/modernizr-2.0.6.min.js' => 'vendor/assets/javascripts/modernizr.js',
+    'html5-boilerplate/js/vendor/modernizr-2.5.3.min.js' => 'vendor/assets/javascripts/modernizr.js',
     'html5-boilerplate/js/plugins.js' => 'vendor/assets/javascripts/plugins.js',
     # public files
     'html5-boilerplate/robots.txt' => 'lib/generators/boilerplate/install/templates',

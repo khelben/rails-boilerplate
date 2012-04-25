@@ -1,71 +1,59 @@
---- html5-boilerplate/index.html	2011-11-23 20:13:05.000000000 +0100
-+++ lib/generators/boilerplate/install/templates/index.html	2012-01-27 18:45:16.000000000 +0100
-@@ -12,50 +12,35 @@
-        More info: h5bp.com/b/378 -->
+--- html5-boilerplate/index.html	2012-04-25 21:17:20.000000000 +0200
++++ lib/generators/boilerplate/install/templates/index.html	2012-04-25 21:52:04.000000000 +0200
+@@ -11,7 +11,7 @@
+        More info: h5bp.com/i/378 -->
    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  
 -  <title></title>
 +  <title><%= application_name %></title>
    <meta name="description" content="">
-   <meta name="author" content="">
  
--  <!-- Mobile viewport optimized: h5bp.com/viewport -->
-+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <!-- Mobile viewport optimized: h5bp.com/viewport -->
+@@ -19,14 +19,15 @@
  
    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
  
 -  <link rel="stylesheet" href="css/style.css">
--  
 +  <%%= stylesheet_link_tag "application" %>
 +  <%%= csrf_meta_tags %>
-+
+ 
    <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
  
-   <!-- All JavaScript at the bottom, except this Modernizr build incl. Respond.js
--       Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects; 
-+       Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects;
-        for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
--  <script src="js/libs/modernizr-2.0.6.min.js"></script>
-+  <%%= javascript_include_tag "modernizr" %>
+   <!-- All JavaScript at the bottom, except this Modernizr build.
+        Modernizr enables HTML5 elements & feature detects for optimal performance.
+        Create your own custom Modernizr build: www.modernizr.com/download/ -->
+-  <script src="js/vendor/modernizr-2.5.3.min.js"></script>
++  <%%= javascript_include_tag 'modernizr' %>
  </head>
- 
  <body>
--  <header>
--
--  </header>
--  <div role="main">
--
--  </div>
--  <footer>
--
--  </footer>
+   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+@@ -34,19 +35,12 @@
+   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+ 
+   <!-- Add your site or application content here -->
 -
 +  <%%= yield %>
  
-   <!-- JavaScript at the bottom for fast page loading -->
--
+   <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
++  <%%= javascript_include_tag 'application' %>
+ 
 -  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
--  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
--  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.0.min.js"><\/script>')</script>
--
+-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
 -
 -  <!-- scripts concatenated and minified via build script -->
--  <script defer src="js/plugins.js"></script>
--  <script defer src="js/script.js"></script>
-+  <%%= javascript_include_tag "application" %>
-   <!-- end scripts -->
- 
- 
+-  <script src="js/plugins.js"></script>
+-  <script src="js/main.js"></script>
+-  <!-- end scripts -->
+-
 +  <%% if Rails.env.production? %>
    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
         mathiasbynens.be/notes/async-analytics-snippet -->
    <script>
-@@ -64,6 +49,7 @@
+@@ -55,5 +49,6 @@
      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
      s.parentNode.insertBefore(g,s)}(document,'script'));
    </script>
-+  <%% end %>
- 
-   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-        chromium.org/developers/how-tos/chrome-frame-getting-started -->
++  <% end %>
+ </body>
+ </html>
