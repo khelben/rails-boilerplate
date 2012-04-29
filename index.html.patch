@@ -1,5 +1,5 @@
 --- html5-boilerplate/index.html	2012-04-25 21:17:20.000000000 +0200
-+++ lib/generators/boilerplate/install/templates/index.html	2012-04-25 21:52:04.000000000 +0200
++++ lib/generators/boilerplate/install/templates/index.html	2012-04-30 00:11:40.000000000 +0200
 @@ -11,7 +11,7 @@
         More info: h5bp.com/i/378 -->
    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,7 +9,7 @@
    <meta name="description" content="">
  
    <!-- Mobile viewport optimized: h5bp.com/viewport -->
-@@ -19,14 +19,15 @@
+@@ -19,14 +19,20 @@
  
    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
  
@@ -24,10 +24,15 @@
         Create your own custom Modernizr build: www.modernizr.com/download/ -->
 -  <script src="js/vendor/modernizr-2.5.3.min.js"></script>
 +  <%%= javascript_include_tag 'modernizr' %>
++
++  <!-- Initializes the modernizr and actually perform the checks. Enable this
++       if you need the modernizr, but remember to only do the actual checks
++       that you need. -->
++  <#%= javascript_tag "Modernizr.load();" %>
  </head>
  <body>
    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-@@ -34,19 +35,12 @@
+@@ -34,19 +40,12 @@
    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
  
    <!-- Add your site or application content here -->
@@ -50,10 +55,10 @@
    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
         mathiasbynens.be/notes/async-analytics-snippet -->
    <script>
-@@ -55,5 +49,6 @@
+@@ -55,5 +54,6 @@
      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
      s.parentNode.insertBefore(g,s)}(document,'script'));
    </script>
-+  <% end %>
++  <%% end %>
  </body>
  </html>
